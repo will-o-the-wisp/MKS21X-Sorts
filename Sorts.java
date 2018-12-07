@@ -18,7 +18,23 @@ public class Sorts{
     }
   }
   public static void bubbleSort(int[] ary){
-    
+    int end=ary.length-1;
+    boolean sorted=false;
+    while(end>0){
+      sorted=true;
+      for(int i=0;i<end;i++){
+        if(ary[i]>ary[i+1]){
+          int old=ary[i+1];
+          ary[i+1]=ary[i];
+          ary[i]=old;
+          sorted=false;
+        }
+      }
+      if(sorted){
+        end=0;
+      }
+      end--;
+    }
   }
   public static String printArray(int[] ary) {
     String output = "[";
@@ -31,9 +47,9 @@ public class Sorts{
     int[] ary=new int[Integer.parseInt(args[0])];
     Random r = new Random();
     for(int i=0;i<ary.length;i++){
-      ary[i]=r.nextInt();
+      ary[i]=r.nextInt()%50;
     }
-    selectionSort(ary);
+    bubbleSort(ary);
     // Google random int generator
     /*
     String sorted = "";
