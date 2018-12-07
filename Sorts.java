@@ -1,5 +1,6 @@
+import java.util.Random;
 public class Sorts{
-  public static void sort(int[] ary){
+  public static void selectionSort(int[] ary){
     int min=ary[0];
     int start=0;
     int index=0;
@@ -16,6 +17,9 @@ public class Sorts{
       start++;
     }
   }
+  public static void bubbleSort(int[] ary){
+    
+  }
   public static String printArray(int[] ary) {
     String output = "[";
     for(int i=0; i<ary.length-1; i++) {
@@ -24,9 +28,14 @@ public class Sorts{
     return output += ary[ary.length-1] + "]";
   }
   public static void main(String[] args) {
-
+    int[] ary=new int[Integer.parseInt(args[0])];
+    Random r = new Random();
+    for(int i=0;i<ary.length;i++){
+      ary[i]=r.nextInt();
+    }
+    selectionSort(ary);
     // Google random int generator
-
+    /*
     String sorted = "";
 
     // 8 nums, [0:10]
@@ -73,6 +82,6 @@ public class Sorts{
     } else {
       System.out.println("TEST CASE - FAIL");
     }
-
+    */
   }
 }
